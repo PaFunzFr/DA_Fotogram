@@ -45,7 +45,8 @@
     /* VARIABLES */
     --color-primary: #0e1721;
     --color-secondary: #11202d;
-    --color-tertiary: #f8f9fa;
+    --color-tertiary: #0b131a;
+    --color-quaternary: rgb(227, 185, 45);
     --color-fonts: #343a40;
 
     --margin-vertical: 40px;
@@ -69,7 +70,6 @@ h1 {
     letter-spacing: 3px;
     margin: 0;
     padding: 0;
-    color: white;
 }
 ul {
     list-style-type: none;
@@ -77,7 +77,6 @@ ul {
 
 a {
     text-decoration: none;
-    color: white;
 }
 
 .app-max-width {
@@ -89,6 +88,45 @@ a {
 
 .hidden {
     display: none;
+}
+
+/* OVERLAY */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.overlay-content {
+    display: flex;
+    width: 100%;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0 0px;
+}
+
+.buttons li {
+    display: flex;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: var(--color-quaternary);
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
 }
 /* HEADER */
 header {
@@ -138,19 +176,45 @@ main {
 
 /* PICTURE CARDS */
 .img-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    grid-gap: 18px;
     margin: var(--margin-vertical) 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .img-card {
     display: flex;
-    width: 100%;
+    width: calc(25% - 20px);
     object-fit: cover;
-    border-radius: 15px;
+    border-radius: 1vmin;
     aspect-ratio: 1/1;
+    box-sizing: border-box;
+    border: 2px solid var(--color-secondary);
+    transition: all 0.4s ease;
 }
+
+.img-card:hover {
+    cursor: pointer;
+    transform: scale(0.97);
+    border: 2px solid var(--color-quaternary);
+    transform: translateY(-3px);
+    filter: drop-shadow(1px 4px 4px var(--color-tertiary));
+}
+
+#btnShowLess,
+#btnShowMore {
+    margin: 2vh 0 var(--margin-vertical) 0;
+    padding: 10px 30px;
+    background-color: var(--color-quaternary);
+    border: none;
+}
+
+#btnShowLess:hover,
+#btnShowMore:hover {
+    background-color: var(--color-tertiary);
+    color: white;
+} 
 /* FOOTER */
 footer {
     display: flex;
@@ -174,8 +238,8 @@ footer {
 .social-media-icons img {
     height: 20px;
     width: 20px;
-    background-color: green;
 }
+
 /* MEDIA QUERIES */
 .hide-mobile {
     display: block;

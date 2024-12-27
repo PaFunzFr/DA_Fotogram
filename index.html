@@ -9,6 +9,16 @@
     <script src="./script.js" defer></script>
 </head>
 <body onload="renderInit()">
+    <section id="overlay">
+        <div class="app-max-width overlay-container">
+            <div class="overlay-content">
+                <ul class="buttons">
+                    <li id="btn-previous"><</li>
+                    <li id="btn-forward">></li>
+                </ul>
+            </div>
+        </div>
+    </section>
     <header class="header">
         <section class="app-max-width header-container">
             <div class="header-left">
@@ -29,8 +39,8 @@
             <div class="img-container" id="picContent">
                 <!-- rendered img-card content here -->
             </div>
-            <button id="btnShowMore" onclick="renderAll()" class="show-more">Zeige Alle</button>
-            <button id="btnShowLess" onclick="renderLess()" class="show-less hidden">Zeige weniger</button>
+            <button id="btnShowMore" onclick="renderAll()" class="show-more">Show All</button>
+            <button id="btnShowLess" onclick="renderLess()" class="show-less hidden">Show Less</button>
         </section>
     </main>
     <footer>
