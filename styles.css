@@ -31,20 +31,20 @@
     font-family: 'Acme';
     font-style: normal;
     font-weight: 400;
-    src: url('./assets/fontsacme-v25-latin-regular.eot'); /* IE9 Compat Modes */
-    src: url('./assets/fontsacme-v25-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('./assets/fontsacme-v25-latin-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-         url('./assets/fontsacme-v25-latin-regular.woff') format('woff'), /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
-         url('./assets/fontsacme-v25-latin-regular.ttf') format('truetype'), /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
-         url('./assets/fontsacme-v25-latin-regular.svg#Acme') format('svg'); /* Legacy iOS */
+    src: url('./assets/fonts/acme-v25-latin-regular.eot'); /* IE9 Compat Modes */
+    src: url('./assets/fonts/acme-v25-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('./assets/fonts/acme-v25-latin-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+         url('./assets/fonts/acme-v25-latin-regular.woff') format('woff'), /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+         url('./assets/fonts/acme-v25-latin-regular.ttf') format('truetype'), /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+         url('./assets/fonts/acme-v25-latin-regular.svg#Acme') format('svg'); /* Legacy iOS */
 }
 
 :root {
     scroll-behavior: smooth;
 
     /* VARIABLES */
-    --color-primary: #007bff;
-    --color-secondary: #6c757d;
+    --color-primary: #121f2d;
+    --color-secondary: #1e3244;
     --color-tertiary: #f8f9fa;
     --color-fonts: #343a40;
 
@@ -57,48 +57,107 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0;
-    background-color: black;
+    background-color: var(--color-primary);
     color: white;
     font-family: "Sintony";
     min-height: 100vh;
 }
 
 h1 {
-    font-family: "Sintony";
+    font-family: 'Acme';
+    font-size: 50px;
+    letter-spacing: 3px;
     margin: 0;
     padding: 0;
     color: white;
 }
+ul {
+    list-style-type: none;
+}
 
+a {
+    text-decoration: none;
+    color: white;
+}
 
 .app-max-width {
     display: flex;
     width: 100%;
     margin: 0 40px;
     max-width: 1440px;
-    background-color: blue;
 }
 
 /* HEADER */
 header {
     display: flex;
+    justify-content: center;
     height: 100px;
-    background-color: darkgrey;
+    background-color: var(--color-secondary);
+    border-bottom: 1px solid black;
 }
 
+.header-container {
+    justify-content: space-between;
+}
+.header-left,
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.main-logo {
+    height: 80px;
+}
+
+.nav-bar {
+    display: flex;
+    gap: 30px;
+    height: 100%;
+    align-items: flex-end;
+    padding-bottom: 50px;
+}
 /* MAIN */
 main {
     display: flex;
     flex: 1;
-    background-color: green;
     justify-content: center;
 }
 
 
 /* FOOTER */
 footer {
+    display: flex;
+    justify-content: center;
     height: 100px;
     background-color: darkblue;
 }
 
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: red;
+}
+
+.social-media-icons {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+.social-media-icons img {
+    height: 20px;
+    width: 20px;
+    background-color: green;
+}
 /* MEDIA QUERIES */
+.hide-mobile {
+    display: block;
+}
+
+@media screen and (max-width: 768px) {
+    .hide-mobile {
+        display: none;
+    }
+}
+    
