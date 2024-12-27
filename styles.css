@@ -47,6 +47,7 @@
     --color-secondary: #11202d;
     --color-tertiary: #0b131a;
     --color-quaternary: rgb(227, 185, 45);
+    --color-quintial: rgba(227, 184, 45, 0.507);
     --color-fonts: #343a40;
 
     --margin-vertical: 40px;
@@ -77,6 +78,7 @@ ul {
 
 a {
     text-decoration: none;
+    color: white;
 }
 
 .app-max-width {
@@ -89,44 +91,82 @@ a {
 .hidden {
     display: none;
 }
+.flex-shown {
+    display: flex;
+}
 
 /* OVERLAY */
-#overlay {
+.overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.9);
-    display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 9999;
+    z-index: 99;
 }
 
+.overlay-container {
+    position: relative;
+    height: 100%;
+}
 .overlay-content {
     display: flex;
+    flex-direction: column;
     width: 100%;
 }
 
-.buttons {
+.btn-close-slider {
+    display: flex;
+    position: absolute;
+    top: 14px;
+    right: 0;
+}
+
+.slider {
     display: flex;
     gap: 20px;
-    width: 100%;
+    width: 96%;
     justify-content: space-between;
     padding: 0;
-    margin: 0 0px;
+    margin: auto;
 }
 
-.buttons li {
+.slider li,
+.btn-close-slider {
     display: flex;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    border-radius: 14px;
     background-color: var(--color-quaternary);
+    border: 1px solid white;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
+    font-size: 40px;
+    z-index: 4;
+    transition: all 0.5s ease;
+    color: white;
+}
+
+.slider li:hover {
+    cursor: pointer;
+    background-color: var(--color-quintial);
+}
+
+.overlay-content img {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 1440px;
+    max-height: 800px;
+    height: 100vw;
+    object-fit: cover;
+    border-radius: 2vmin;
 }
 /* HEADER */
 header {
