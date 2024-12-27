@@ -6,8 +6,9 @@
     <title>Fotogram</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="./assets/img/01_facivon/logo_fotogram.svg">
+    <script src="./script.js" defer></script>
 </head>
-<body>
+<body onload="renderInit()">
     <header class="header">
         <section class="app-max-width header-container">
             <div class="header-left">
@@ -25,9 +26,11 @@
     </header>
     <main>
         <section class="app-max-width main-container">
-            <div class="img-container">
-                <img>
+            <div class="img-container" id="picContent">
+                <!-- rendered img-card content here -->
             </div>
+            <button id="btnShowMore" onclick="renderAll()" class="show-more">Zeige Alle</button>
+            <button id="btnShowLess" onclick="renderLess()" class="show-less hidden">Zeige weniger</button>
         </section>
     </main>
     <footer>
@@ -40,10 +43,10 @@
                 </ul>
             </div>
             <div class="footer-right">
-                <p>�� 2021 Fotogram. All rights reserved.</p>
+                <p>&copy; 2024 Fotogram | Pictures by Patrick Frey. All rights reserved.</p>
             </div>
         </section> 
     </footer>
 </body>
-<script src="./script.js" defer></script>
+
 </html>
