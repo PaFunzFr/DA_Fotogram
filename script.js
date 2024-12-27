@@ -49,7 +49,7 @@ function createtOverlay(imgId) {
     getOverlay.innerHTML += `
         <div class="app-max-width overlay-container">
             <div class="overlay-content">
-                <button onclick="closeOverlay()" class="btn-close-slider">X</button>
+                <button id="closeBtn" onclick="closeOverlay(event)" class="btn-close-slider">X</button>
                 <ul class="slider">
                     <li onclick="prevPic(${currentIndex})" id="btn-previous"><</li>
                     <li onclick="nextPic(${currentIndex})" id="btn-forward">></li>
@@ -57,11 +57,6 @@ function createtOverlay(imgId) {
                 <img class="overlay-pic" src="./assets/img/03_pics/${currentIndex + 1}.jpg">
             </div>
         </div>`;
-}
-
-function closeOverlay() {
-    getOverlay.classList.add("hidden");
-    getOverlay.classList.remove("flex-shown");
 }
 
 function nextPic() {
@@ -90,3 +85,9 @@ function updatePrevCurrentPic() {
     overlayPic.src = `./assets/img/03_pics/${currentIndex}.jpg`;
     console.log(overlayPic.src);
 }
+
+function closeOverlay(event) {
+    if (event.target.id === "overlay" || event.target.id === "closeBtn") {
+    getOverlay.classList.add("hidden");
+    getOverlay.classList.remove("flex-shown");
+}};

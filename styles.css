@@ -110,7 +110,6 @@ a {
 
 .overlay-container {
     position: relative;
-    height: 100%;
 }
 .overlay-content {
     display: flex;
@@ -220,12 +219,12 @@ main {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 15px 1.33%;
 }
 
 .img-card {
     display: flex;
-    width: calc(25% - 20px);
+    width: 24%;
     object-fit: cover;
     border-radius: 1vmin;
     aspect-ratio: 1/1;
