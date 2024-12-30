@@ -18,7 +18,10 @@ function renderInit() {
 }
 
 function createElement(id) {
-    picContent.innerHTML += `<img onclick="popOverlay(${id})" class="img-card" src="${picContainer[id]}">`;
+    picContent.innerHTML += `
+        <div class="card-wrapper">
+            <img onclick="popOverlay(${id})" class="img-card" src="${picContainer[id]}">
+        </div>`;
 }
 
 function renderAll() {
@@ -47,9 +50,9 @@ function popOverlay(imgId) {
 function createtOverlay(imgId) {
     currentIndex = imgId;
     getOverlay.innerHTML += `
+        <button id="closeBtn" onclick="closeOverlay(event)" class="btn-close-slider">X</button>
         <div class="app-max-width overlay-container">
             <div class="overlay-content">
-                <button id="closeBtn" onclick="closeOverlay(event)" class="btn-close-slider">X</button>
                 <ul class="slider">
                     <li onclick="prevPic(${currentIndex})" id="btn-previous"><</li>
                     <li onclick="nextPic(${currentIndex})" id="btn-forward">></li>
@@ -64,7 +67,7 @@ function nextPic() {
     if (currentIndex >= picContainer.length) {
         currentIndex = 0;
     }
-    updateNextCurrentPic();
+    updateCurrentPic();
 }
 
 function prevPic() {
@@ -72,18 +75,12 @@ function prevPic() {
     if (currentIndex <= 0) {
         currentIndex = picContainer.length;
     }
-    updatePrevCurrentPic();
+    updateCurrentPic();
 }
 
-function updateNextCurrentPic() {
+function updateCurrentPic() {
     let overlayPic = document.querySelector(".overlay-pic");
-    overlayPic.src = `./assets/img/03_pics/${currentIndex + 1}.jpg`;
-}
-
-function updatePrevCurrentPic() {
-    let overlayPic = document.querySelector(".overlay-pic");
-    overlayPic.src = `./assets/img/03_pics/${currentIndex}.jpg`;
-    console.log(overlayPic.src);
+    overlayPic.src = `./assets/img/03_pics/${currentIndex + 1}.jpg`; // index = 0, picture name = 1 => +1
 }
 
 function closeOverlay(event) {
