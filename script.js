@@ -73,7 +73,7 @@ function nextPic() {
 function prevPic() {
     currentIndex --;
     if (currentIndex <= 0) {
-        currentIndex = picContainer.length;
+        currentIndex = picContainer.length - 1;
     }
     updateCurrentPic();
 }
