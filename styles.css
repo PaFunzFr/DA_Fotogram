@@ -140,7 +140,6 @@ a:hover {
 
 .overlay-container {
     position: relative;
-    height: 100%;
 }
 
 .overlay-content {
@@ -160,7 +159,6 @@ a:hover {
 .slider {
     display: flex;
     height: 100%;
-    max-height: 700px;
     gap: 20px;
     width: 100%;
     justify-content: space-between;
@@ -188,12 +186,11 @@ a:hover {
 
 .slider li {
     width: 100px;
-    height: 100%;
+    height: 700px;
     border: none;
+    border-radius: 1vmin;
 }
-.slider li:first-child {
-    border-radius: 14px 0 0 14px;
-} 
+
 .slider li:first-child {
     background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent);
 }
@@ -215,7 +212,6 @@ a:hover {
 .btn-close-slider:hover {
     cursor: pointer;
     background-color: var(--color-quintial);
-
 }
 
 .overlay-content img {
@@ -446,9 +442,13 @@ footer {
         border-radius: 14px;
         font-size: 24px;
     }
-    .slider,
+
     .overlay-content img {
         max-height: 450px;
+    }
+
+    .slider li {
+        height: 450px;
     }
 }
 
@@ -465,12 +465,24 @@ footer {
     .card-wrapper::before {
         padding: 3px;
     }
-    .slider,
+
     .overlay-content img {
         max-height: 300px;
     }
 
     .slider li {
         width: 70px;
+        height: 300px;
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+    .overlay-content img {
+        max-height: 240px;
+    }
+
+    .slider li {
+        height: 240px;
     }
 }
